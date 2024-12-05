@@ -19,7 +19,7 @@ class Home extends React.Component{
    render(){
 
 		if (this.state.redirectToLogin) {
-			return <Navigate to="/login" />;
+			return <Navigate to="/signup" />;
 		 }
 
 
