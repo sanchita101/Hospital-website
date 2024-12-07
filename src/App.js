@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
 import Login from './pages/login';
 import Signup from './pages/signup';
+import SymptomChecker from './pages/symptomchecker';
 // import Appointment from './pages/appointment';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
 
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup/>} />
+
+        <Route path="/symptomchecker" element={<SymptomChecker/>} />
         {/* <Route path="/login" element={<Login />} /> */}
         {/* <Route path="/appointment" element={<Appointment />} /> */}
 

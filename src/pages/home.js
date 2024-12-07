@@ -2,12 +2,14 @@ import React from 'react'
 import { Navigate } from 'react-router-dom';
 
 
+
 class Home extends React.Component{
 
 	constructor(props) {
 		super(props);
 		this.state = {
 		  redirectToLogin: false,
+		  redirectToSymptomChecker: false,
 		};
 	 }
   
@@ -15,13 +17,20 @@ class Home extends React.Component{
 		this.setState({ redirectToLogin: true });
 	 };
 
+	 handleSymptomChecker = () => {
+		this.setState({ redirectToSymptomChecker: true });
+	 };
+
 
    render(){
 
 		if (this.state.redirectToLogin) {
 			return <Navigate to="/signup" />;
-		 }
+		}
 
+		if (this.state.redirectToSymptomChecker) {
+			return <Navigate to="/symptomchecker" />;
+		}
 
       return(
       <div>
@@ -79,7 +88,7 @@ class Home extends React.Component{
 												</ul>
                                  </li>
 											<li><a href="#">Doctors </a></li>
-											<li><a href="#">Services </a></li>
+											<li><a href="#"  onClick={this.handleSymptomChecker}>Symptom Checker</a></li>
 											<li><a href="#">Pages <i className="icofont-rounded-down"></i></a>
 												<ul className="dropdown">
 													<li><a href="sub-pages/404.html">404 Error</a></li>
